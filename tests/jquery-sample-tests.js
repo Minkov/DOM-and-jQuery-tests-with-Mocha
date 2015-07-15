@@ -20,8 +20,8 @@ describe('jQuery: Sample tests', function() {
     });
 
     it('Simple Test jQuery', function(){
-        var div = $('<div>hello <b>world</b></div>');
-        expect(div.html()).to.eql('hello <b>world</b>');
+        var $div = $('<div>hello <b>world</b></div>');
+        expect($div.html()).to.eql('hello <b>world</b>');
     });
 
     it('Expect to contain div with ID #root', function(){
