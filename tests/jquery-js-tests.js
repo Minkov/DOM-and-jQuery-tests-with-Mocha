@@ -2,20 +2,21 @@ var solve = require('../tasks/pure-js');
 var expect = require('chai').expect;
 var jsdom = require('mocha-jsdom');
 
-// global.window = jsdom().createWindow();
-// global.document = window.document;
-// global.$ = require('jquery').create(window);
-
 describe('Initial tests', function() {
-    var $;
+    var $,
+        htmlTemplate = '<div id="root"></div>';
     jsdom();
+
+    beforeEach(function(){
+        $ = require('jquery');
+        document.body.innerHTML = htmlTemplate;
+    });
+
     it('Has window', function(){
         expect(window).to.exist;
-
     });
 
     it('Has jQuery', function(){
-        $ = require('jquery');
         expect($).to.exist;
     });
 
@@ -23,20 +24,20 @@ describe('Initial tests', function() {
         var div = $('<div>hello <b>world</b></div>');
         expect(div.html()).to.eql('hello <b>world</b>');
     });
-//     // var $,
-//     var htmlTemplate = '<div id="root"></div>';
 
-//     // jsdom();
-//     // $ = require('jquery');
+    it('Expect to contain div with ID #root', function(){
+        var div = $('#root');
+        expect(div).to.exist;
+        expect(div.is('div')).to.be.ok;
+    });
 
-// // ?    $ = require('jquery');
-
-//     beforeEach(function() {
-//         document.body.innerHTML = htmlTemplate;
-//     });
-
-//     describe('Valid Tests', function() {  
-//        var div = $('<div>hello <b>world</b></div>');
-//         expect(div.html()).to.eql('hello <b>world</b>');
-//     });
+    it('Expect to #root to contain 5 divs', function(){
+        var i,
+            count = 5,
+            $root = $('#root');
+        for(i = 0; i < count; i += 1){
+            $root.append($('<div/>').html('Item #' + i));
+        }
+        expect($root.find('div').length).to.equal(count);
+    });
 });
