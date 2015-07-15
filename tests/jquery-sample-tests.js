@@ -1,4 +1,3 @@
-var solve = require('../tasks/pure-js');
 var expect = require('chai').expect;
 var jsdom = require('mocha-jsdom');
 
