@@ -2,7 +2,7 @@ var solve = require('../tasks/pure-js');
 var expect = require('chai').expect;
 var jsdom = require('mocha-jsdom');
 
-describe('Initial tests', function() {
+describe('jQuery: Sample tests', function() {
     var $,
         htmlTemplate = '<div id="root"></div>';
     jsdom();

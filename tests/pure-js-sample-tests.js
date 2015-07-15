@@ -3,7 +3,7 @@ var expect = require('chai').expect;
 var jsdom = require('mocha-jsdom');
 
 
-describe('Initial tests', function() {
+describe('PureJS Sample tests', function() {
     var htmlTemplate = '<div id="root"></div>';
     jsdom();
 
