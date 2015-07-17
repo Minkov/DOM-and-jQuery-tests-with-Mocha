@@ -1,3 +1,4 @@
+/* globals require, describe, it */
 var expect = require('chai').expect,
     handlebars = require('handlebars'),
     templateString = require('../tasks/handlebars-sample')();

@@ -11,7 +11,13 @@ JavaScript OOP Course Repository
 
 *   Checkout the repository for the particular homework 
 *   Open CMD/Terminal and navigate to the checked out repository with the homework
-*   **If you are running on windows**, run `$ npm install jsdom@3 --msvs_version=2012` or `$ npm install jsdom@3 --msvs_version=2013`
+*   **If you are running on windows**
+    
+        $ npm install jsdom@3 --msvs_version=2012
+    or 
+
+        $ npm install jsdom@3 --msvs_version=2013
+        
 *   Run `npm install` in CMD/Terminal
     *   A folder `node_modules` should appear
 *   You are ready to run the tests
