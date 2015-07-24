@@ -1,35 +1,32 @@
 /* globals global, require, describe, before, beforeEach, it */
-var solve = require('../tasks/pure-js-sample');
+var result = require('../tasks/pure-js-sample');
 var expect = require('chai').expect;
 var jsdom = require('jsdom');
 
 
 describe('PureJS Sample tests', function() {
-  var htmlTemplate = '<div id="root"></div>';
 
   before(function(done) {
     jsdom.env({
       html: '<div',
       done: function(errors, window) {
         global.window = window;
-        global.document = window.document;
-        for (var prop in window) {
-          if (window.hasOwnProperty(prop)) {
-            global[prop] = window[prop];
-          }
-        }
+        global.document = window.document;      
+        // Object.keys(window)
+        //   .filter(function(prop){
+        //     return prop.toLowerCase().indexOf('html')>=0;
+        //   }).forEach(function(prop){
+        //     global[prop] = window[prop];            
+        //   });
         done();
       }
     });
   });
 
-  beforeEach(function() {
-    document.body.innerHTML = htmlTemplate;
-  });
-
   describe('Valid Tests', function() {
     it('expect element to contain 5 divs with the provided contents', function() {
-      var fillWithDivs = solve();
+      document.body.innerHTML = '<div id="root"></div>';
+      var fillWithDivs = result();
       var count = 5,
         contents = Array.call(Array, {
           length: count
@@ -48,7 +45,8 @@ describe('PureJS Sample tests', function() {
     });
 
     it('expect #root to contain 5 divs with the provided contents', function() {
-      var fillWithDivs = solve();
+      var fillWithDivs = result();
+      document.body.innerHTML = '<div id="root"></div>';
       var count = 5,
         contents = Array.call(Array, {
           length: count
@@ -69,7 +67,8 @@ describe('PureJS Sample tests', function() {
 
   describe('Invalid tests', function() {
     it('expect to throw, when nothing is passed as parameter', function() {
-      var fillWithDivs = solve();
+      document.body.innerHTML = '<div id="root"></div>';
+      var fillWithDivs = result();
 
       function test() {
         fillWithDivs();
@@ -78,7 +77,8 @@ describe('PureJS Sample tests', function() {
     });
 
     it('expect to throw, when undefined is passed as first parameter, second is valid', function() {
-      var fillWithDivs = solve();
+      document.body.innerHTML = '<div id="root"></div>';
+      var fillWithDivs = result();
 
       function test() {
         fillWithDivs(undefined, ['Test']);
@@ -87,7 +87,8 @@ describe('PureJS Sample tests', function() {
     });
 
     it('expect to throw, when null is passed as first parameter, second is valid', function() {
-      var fillWithDivs = solve();
+      document.body.innerHTML = '<div id="root"></div>';
+      var fillWithDivs = result();
 
       function test() {
         fillWithDivs(null, ['Test']);
@@ -96,7 +97,8 @@ describe('PureJS Sample tests', function() {
     });
 
     it('expect to throw, when id of non-existing element is passed as first parameter, second is valid', function() {
-      var fillWithDivs = solve();
+      document.body.innerHTML = '<div id="root"></div>';
+      var fillWithDivs = result();
 
       function test() {
         fillWithDivs('THIS_IS_INVALID_ID', ['Test']);
@@ -106,7 +108,8 @@ describe('PureJS Sample tests', function() {
 
 
     it('expect to throw, when no contents array is passed, the ID is valid', function() {
-      var fillWithDivs = solve();
+      document.body.innerHTML = '<div id="root"></div>';
+      var fillWithDivs = result();
 
       function test() {
         fillWithDivs('root');
@@ -115,7 +118,8 @@ describe('PureJS Sample tests', function() {
     });
 
     it('expect to throw, when null is passed as contents array, the ID is valid', function() {
-      var fillWithDivs = solve();
+      document.body.innerHTML = '<div id="root"></div>';
+      var fillWithDivs = result();
 
       function test() {
         fillWithDivs('root');
@@ -124,7 +128,9 @@ describe('PureJS Sample tests', function() {
     });
 
     it('expect to throw and the root content to remain unchanged, when contents array contains element different that string or number, the ID is valid', function() {
-      var fillWithDivs = solve(),
+      
+      document.body.innerHTML = '<div id="root"></div>';
+      var fillWithDivs = result(),
         root = document.getElementById('root'),
         innerHTML = root.innerHTML;
 

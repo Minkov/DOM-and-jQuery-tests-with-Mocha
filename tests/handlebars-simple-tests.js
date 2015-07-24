@@ -1,11 +1,11 @@
 /* globals require, describe, it */
 var expect = require('chai').expect,
     handlebars = require('handlebars'),
-    templateString = require('../tasks/handlebars-sample')();
+    result = require('../tasks/handlebars-sample')();
 
 describe('Handlebars: Sample test', function() {
     it('Expect to work', function() {
-        var template = handlebars.compile(templateString);
+        var template = handlebars.compile(result);
 
         var data = {
             "name": "Alan",

@@ -16,7 +16,7 @@ function solve() {
     if(typeof container === 'string'){
       container = document.getElementById(container);
     }
-    if(!(container instanceof HTMLElement)){
+    if(!(container instanceof window.HTMLElement)){
       throw new Error('The function MUST take either an HTMLElement or id for existing element');
     }
     var fragment = document.createDocumentFragment();
