@@ -1,4 +1,4 @@
-# Running DOM tests with Mocha on Node.js
+# Running DOM tests with Mocha on JavaScript I/O
 JavaScript OOP Course Repository
 
 ## Preparing the local machine for Unit testing with Mocha and Chai 
