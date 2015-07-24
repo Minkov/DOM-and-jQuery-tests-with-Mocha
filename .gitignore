@@ -28,3 +28,6 @@ node_modules
 
 #MAC dirs
 .DS_Store
+
+#Visual Studio settings
+.settings
