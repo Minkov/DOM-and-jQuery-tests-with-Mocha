@@ -13,4 +13,4 @@
 ## Running the tests
 
 *   Open the main folder and run `$ npm test`
-    *   Test results should appear on the CMD/Terminal   
+    *   Test results should appear on the CMD/Terminal 

@@ -6,7 +6,7 @@ var jq = require('jquery');
 var result = require('../tasks/pure-js-events')();  
   
 
-describe('PureJS Sample tests', function() {
+describe('PureJS events tests', function() {
  
   before(function(done) {
     jsdom.env({
