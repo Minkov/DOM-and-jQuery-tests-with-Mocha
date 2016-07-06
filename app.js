@@ -1,0 +1,1 @@
+require("./tests/pure-js-sample-tests");

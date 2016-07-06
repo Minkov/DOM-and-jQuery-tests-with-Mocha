@@ -1,9 +1,5 @@
-/* Task Description */
-/* 
-* Create a function that fills a container with divs with the provided contents
-*/
-
 function solve() {
+  console.log("Here!");
   var divTemplate = document.createElement('div');
 
   function clear(element){
@@ -13,12 +9,14 @@ function solve() {
   }
 
   return function(container, contents){
+    console.log(container);
     if(typeof container === 'string'){
       container = document.getElementById(container);
     }
     if(!(container instanceof window.HTMLElement)){
       throw new Error('The function MUST take either an HTMLElement or id for existing element');
     }
+
     var fragment = document.createDocumentFragment();
     clear(container);
     contents.forEach(function(content){
@@ -32,5 +30,3 @@ function solve() {
     container.appendChild(fragment);
   };
 }
-
-module.exports = solve;

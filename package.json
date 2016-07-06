@@ -6,7 +6,9 @@
     "tests": "tests",
     "tasks": "tasks"
   },
-  "scripts": {},
+  "scripts": {
+    "test": ""
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Minkov/DOM-and-jQuery-tests-with-Mocha.git"
@@ -18,11 +20,9 @@
   },
   "homepage": "https://github.com/Minkov/DOM-and-jQuery-tests-with-Mocha",
   "dependencies": {
-    "chai": "^3.2.0",
-    "handlebars": "^3.0.3",
-    "jquery": "^2.1.4",
-    "jsdom": "^5.6.1",
-    "mocha": "^2.2.5"
+    "chai": "^3.5.0",
+    "jsdom": "^9.4.1",
+    "mocha": "^2.5.3"
   },
   "devDependencies": {
     "sinon": "^1.15.4",
