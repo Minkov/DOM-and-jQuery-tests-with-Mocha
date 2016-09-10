@@ -7,7 +7,7 @@
     "tasks": "tasks"
   },
   "scripts": {
-    "test": ""
+    "start": "./node_modules/mocha/bin/mocha app.js"
   },
   "repository": {
     "type": "git",
